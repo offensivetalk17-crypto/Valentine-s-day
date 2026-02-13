@@ -44,7 +44,7 @@
     </div>
 </div>
 
-<audio id="bg-music" src="https://docs.google.com/uc?export=open&id=1pVsF6pMjAQV39Fb9_Uh4b1lc6AS1l5U3" preload="auto" loop></audio>
+<audio id="bg-music" src="https://docs.google.com/uc?export=download&id=1pVsF6pMjAQV39Fb9_Uh4b1lc6AS1l5U3" preload="auto" loop></audio>
 
 <script>
     function createHeart() {
@@ -76,22 +76,22 @@
     function openGift(box) {
         const giftContainer = document.getElementById('gift-container');
         const mainGif = document.getElementById('main-gif');
+        const music = document.getElementById('bg-music');
         
         mainGif.style.display = "none";
         document.querySelector('#final-gift p').style.display = "none";
 
         if(box == 1) {
             giftContainer.innerHTML = `
-                <video controls autoplay playsinline><source src="https://docs.google.com/uc?export=open&id=1q05VG_bUG5w9xjB5fHGuQneS2hnhBGFy" type="video/mp4"></video>
+                <video controls autoplay playsinline><source src="https://docs.google.com/uc?export=download&id=1q05VG_bUG5w9xjB5fHGuQneS2hnhBGFy" type="video/mp4"></video>
                 <div class="gift-msg">I know I don’t have everything figured out. There are so many things I still don’t understand, and yeah, sometimes I act like a fool.\n\nBut one thing I’m absolutely sure about is you.\n\nI love you so much more than my confusion, more than my flaws, more than my overthinking. And I’m trying to be better, every day, for us.</div>
                 <button class="back-btn" onclick="location.reload()">Back</button>`;
         } else if(box == 2) {
             giftContainer.innerHTML = `
-                <video controls autoplay playsinline><source src="https://docs.google.com/uc?export=open&id=1Qsr_NJbxERU1J-19aL6NL_VIYOE8_aL1" type="video/mp4"></video>
+                <video controls autoplay playsinline><source src="https://docs.google.com/uc?export=download&id=1Qsr_NJbxERU1J-19aL6NL_VIYOE8_aL1" type="video/mp4"></video>
                 <div class="gift-msg">Happy Valentine’s Day, my baby\n\nSach bolu to meri life perfect nhi thi, aur na hi me perfect hu. Bohot phases aaye jahan me khud ko hi kho chuka tha. But then you came… aur bina kuch special kiye, you became my peace.\n\nTum mere liye sirf ek person nhi ho, tum wo feeling ho jahan mera mind finally calm ho jata h.\n\nI don’t know future kya hoga, but one thing I know for sure — I love you, and I’ll keep loving you in ways words can never fully explain.\n\nThank you for existing. Thank you for being mine. ❤️</div>
                 <button class="back-btn" onclick="location.reload()">Back</button>`;
         } else {
-            const music = document.getElementById('bg-music');
             music.play();
             giftContainer.innerHTML = `
                 <img src="gift_photo.jpg" style="width: 100%; border-radius: 15px;">
