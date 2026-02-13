@@ -20,7 +20,7 @@
         .gift-img { width: 75px; cursor: pointer; margin: 5px; }
         .gift-msg { font-size: 13px; line-height: 1.5; color: #d63384; text-align: left; font-weight: 500; background: rgba(255, 255, 255, 0.6); padding: 15px; border-radius: 15px; margin-top: 15px; max-height: 250px; overflow-y: auto; white-space: pre-wrap; }
         .back-btn { background:#ff4d6d; color:white; padding:8px 15px; border-radius:50px; border:none; margin-top:10px; cursor:pointer; }
-        iframe { width: 100%; height: 200px; border-radius: 15px; border: none; margin-bottom: 10px; background: #000; }
+        video { width: 100%; border-radius: 15px; background: #000; margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -44,7 +44,7 @@
     </div>
 </div>
 
-<audio id="bg-music" src="https://docs.google.com/uc?export=download&id=1pVsF6pMjAQV39Fb9_Uh4b1lc6AS1l5U3" preload="auto" loop></audio>
+<audio id="bg-music" src="Song.mp3" preload="auto" loop></audio>
 
 <script>
     function createHeart() {
@@ -82,12 +82,12 @@
 
         if(box == 1) {
             giftContainer.innerHTML = `
-                <iframe src="https://drive.google.com/file/d/1q05VG_bUG5w9xjB5fHGuQneS2hnhBGFy/preview"></iframe>
+                <video controls autoplay playsinline><source src="gift_video.mp4" type="video/mp4"></video>
                 <div class="gift-msg">I know I don’t have everything figured out. There are so many things I still don’t understand, and yeah, sometimes I act like a fool.\n\nBut one thing I’m absolutely sure about is you.\n\nI love you so much more than my confusion, more than my flaws, more than my overthinking. And I’m trying to be better, every day, for us.</div>
                 <button class="back-btn" onclick="location.reload()">Back</button>`;
         } else if(box == 2) {
             giftContainer.innerHTML = `
-                <iframe src="https://drive.google.com/file/d/1Qsr_NJbxERU1J-19aL6NL_VIYOE8_aL1/preview"></iframe>
+                <video controls autoplay playsinline><source src="gift_video2.mp4" type="video/mp4"></video>
                 <div class="gift-msg">Happy Valentine’s Day, my baby\n\nSach bolu to meri life perfect nhi thi, aur na hi me perfect hu. Bohot phases aaye jahan me khud ko hi kho chuka tha. But then you came… aur bina kuch special kiye, you became my peace.\n\nTum mere liye sirf ek person nhi ho, tum wo feeling ho jahan mera mind finally calm ho jata h.\n\nI don’t know future kya hoga, but one thing I know for sure — I love you, and I’ll keep loving you in ways words can never fully explain.\n\nThank you for existing. Thank you for being mine. ❤️</div>
                 <button class="back-btn" onclick="location.reload()">Back</button>`;
         } else {
