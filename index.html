@@ -12,11 +12,15 @@
         .container { background: rgba(255, 255, 255, 0.9); padding: 25px; border-radius: 25px; z-index: 10; width: 85%; max-width: 350px; text-align: center; box-shadow: 0 10px 25px rgba(0,0,0,0.1); position: relative; }
         #main-gif { width: 150px; border-radius: 15px; margin-bottom: 15px; }
         h2 { color: #d63384; font-size: 18px; font-weight: 600; margin-bottom: 20px; }
-        .btn-yes { background-color: #ff4d6d; color: white; padding: 10px 20px; border: none; border-radius: 50px; font-weight: 600; cursor: pointer; }
+        .btn-group { display: flex; justify-content: center; gap: 10px; }
+        button { padding: 10px 20px; font-size: 15px; font-weight: 600; border: none; border-radius: 50px; cursor: pointer; transition: 0.3s; }
+        .btn-yes { background-color: #ff4d6d; color: white; }
+        .btn-no { background-color: #f0f0f0; color: #ff4d6d; }
         .hidden { display: none !important; }
-        .gift-img { width: 75px; cursor: pointer; margin: 5px; transition: 0.3s; }
+        .gift-img { width: 75px; cursor: pointer; margin: 5px; }
         .gift-msg { font-size: 13px; line-height: 1.5; color: #d63384; text-align: left; font-weight: 500; background: rgba(255, 255, 255, 0.6); padding: 15px; border-radius: 15px; margin-top: 15px; max-height: 250px; overflow-y: auto; white-space: pre-wrap; }
         .back-btn { background:#ff4d6d; color:white; padding:8px 15px; border-radius:50px; border:none; margin-top:10px; cursor:pointer; }
+        video { width: 100%; border-radius: 15px; background: #000; margin-bottom: 10px; }
     </style>
 </head>
 <body>
@@ -24,7 +28,11 @@
 <div class="container" id="main-card">
     <img id="main-gif" src="Intro.gif">
     <h2 id="main-text">HIEEE babyyy <br>will u be my valentine?</h2>
-    <div id="options"><button class="btn-yes" onclick="showSuccess()">YES</button></div>
+    
+    <div id="options" class="btn-group">
+        <button class="btn-yes" onclick="showSuccess()">YES</button>
+        <button id="no-button" class="btn-no" onclick="sayingNo()">NO</button>
+    </div>
 
     <div id="final-gift" class="hidden">
         <p style="color: #ff4d6d; font-weight: 600; font-size: 14px;">thanku baby, here is gift for you</p>
@@ -49,6 +57,12 @@
     }
     setInterval(createHeart, 200);
 
+    function sayingNo() {
+        document.getElementById('main-gif').src = "Saying_no.gif";
+        document.getElementById('main-text').innerHTML = "ACHA, PLS SAY YESS 🥺";
+        document.getElementById('no-button').classList.add('hidden');
+    }
+
     function showSuccess() {
         document.getElementById('main-gif').src = "Shy.gif";
         document.getElementById('main-text').classList.add('hidden');
@@ -66,12 +80,12 @@
 
         if(box == 1) {
             giftContainer.innerHTML = `
-                <video controls autoplay style="width: 100%; border-radius: 15px;"><source src="https://docs.google.com/uc?export=download&id=1q05VG_bUG5w9xjB5fHGuQneS2hnhBGFy" type="video/mp4"></video>
+                <video controls autoplay><source src="https://docs.google.com/uc?export=download&id=1q05VG_bUG5w9xjB5fHGuQneS2hnhBGFy" type="video/mp4"></video>
                 <div class="gift-msg">I know I don’t have everything figured out. There are so many things I still don’t understand, and yeah, sometimes I act like a fool.\n\nBut one thing I’m absolutely sure about is you.\n\nI love you so much more than my confusion, more than my flaws, more than my overthinking. And I’m trying to be better, every day, for us.</div>
                 <button class="back-btn" onclick="location.reload()">Back</button>`;
         } else if(box == 2) {
             giftContainer.innerHTML = `
-                <video controls autoplay style="width: 100%; border-radius: 15px;"><source src="https://docs.google.com/uc?export=download&id=1Qsr_NJbxERU1J-19aL6NL_VIYOE8_aL1" type="video/mp4"></video>
+                <video controls autoplay><source src="https://docs.google.com/uc?export=download&id=1Qsr_NJbxERU1J-19aL6NL_VIYOE8_aL1" type="video/mp4"></video>
                 <div class="gift-msg">Happy Valentine’s Day, my baby\n\nSach bolu to meri life perfect nhi thi, aur na hi me perfect hu. Bohot phases aaye jahan me khud ko hi kho chuka tha. But then you came… aur bina kuch special kiye, you became my peace.\n\nTum mere liye sirf ek person nhi ho, tum wo feeling ho jahan mera mind finally calm ho jata h.\n\nI don’t know future kya hoga, but one thing I know for sure — I love you, and I’ll keep loving you in ways words can never fully explain.\n\nThank you for existing. Thank you for being mine. ❤️</div>
                 <button class="back-btn" onclick="location.reload()">Back</button>`;
         } else {
@@ -85,4 +99,3 @@
 </script>
 </body>
 </html>
-
